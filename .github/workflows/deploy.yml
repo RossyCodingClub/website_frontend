@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - setup-dev
+      - setup-testdev
 
 jobs:
   build:
