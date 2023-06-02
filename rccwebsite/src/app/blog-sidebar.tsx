@@ -1,5 +1,3 @@
-
-
 export function BlogSidebar() {
-	return <p></p>
+	return <p></p>;
 }
