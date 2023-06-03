@@ -6,7 +6,9 @@ import viteTsConfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
 	cacheDir: './node_modules/.vite/rccwebsite',
 	base: '/website_frontend/',
-
+	define: {
+		global: {}
+	},
 	server: {
 		port: 4200,
 		host: 'localhost',
