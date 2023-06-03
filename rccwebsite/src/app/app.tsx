@@ -2,7 +2,7 @@
 import useDarkMode from 'use-dark-mode';
 import { Button, createTheme, NextUIProvider, Input, useTheme } from "@nextui-org/react"
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
-
+import Navbar from './Components/Navbar'
 import { Fragment } from 'react';
 import DLSwitch from './Components/DarkLightToggle';
 
@@ -82,7 +82,9 @@ function App() {
 			<Routes>
 				<Route path='/website_frontend/' element={
 					<div>
+						<Navbar></Navbar>
 						<h1>Cringe</h1>
+						
 						<DLSwitch></DLSwitch>
 					</div>
 				}>
