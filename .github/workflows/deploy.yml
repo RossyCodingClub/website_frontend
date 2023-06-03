@@ -51,6 +51,6 @@ jobs:
       #uses: actions/deploy-pages@v2
     steps:
       - name: deploy to github pages
-        uses: upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1
         with:
           path: .
