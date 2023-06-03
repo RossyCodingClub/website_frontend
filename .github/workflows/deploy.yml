@@ -29,28 +29,22 @@ jobs:
         run: npm run build
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
           path: rccwebsite/dist
 
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    #permissions:
-      #pages: write
-      #id-token: write
-    #environment:
-      #name: github-pages
-      #url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-    #steps:
-    #  - name: Deploy to Github Pages
-      #id: deployment
-      #uses: actions/deploy-pages@v2
     steps:
-      - name: deploy to github pages
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: .
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
