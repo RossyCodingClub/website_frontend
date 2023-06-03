@@ -38,14 +38,19 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    #permissions:
+      #pages: write
+      #id-token: write
+    #environment:
+      #name: github-pages
+      #url: ${{ steps.deployment.outputs.page_url }}
 
+    #steps:
+    #  - name: Deploy to Github Pages
+      #id: deployment
+      #uses: actions/deploy-pages@v2
     steps:
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: deploy to github pages
+        uses: upload-pages-artifact@v1
+        with:
+          path: .
