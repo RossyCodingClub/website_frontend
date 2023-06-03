@@ -20,15 +20,12 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        working-directory: ./rccwebsite
         uses: bahmutov/npm-install@v1
 
       - name: Build project
-        working-directory: ./rccwebsite
         run: npm run build
 
       - name: Upload production-ready build files
-        working-directory: ./rccwebsite
         uses: actions/upload-artifact@v3
         with:
           name: production-files
