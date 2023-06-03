@@ -1,0 +1,31 @@
+name: build_test
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+    branches:
+      - 'master'
+      - '*-dev'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: rccwebsite
+      - name: Verify formatting
+        working-directory: rccwebsite
+        run: npx prettier --check .
+      - name: Build project
+        working-directory: rccwebsite
+        run: npm run build
