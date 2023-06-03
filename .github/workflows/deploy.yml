@@ -20,35 +20,31 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        working-directory: ./rccwebsite
         uses: bahmutov/npm-install@v1
+        with:
+          working-directory: rccwebsite
 
       - name: Build project
-        working-directory: ./rccwebsite
+        working-directory: rccwebsite
         run: npm run build
 
       - name: Upload production-ready build files
-        working-directory: ./rccwebsite
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: production-files
-          path: ./dist
+          path: rccwebsite/dist/rccwebsite
 
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
