@@ -6,7 +6,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 export function NxWelcome({ title }: { title: string }) {
-		return (
+	return (
 		<>
 			<style
 				dangerouslySetInnerHTML={{
