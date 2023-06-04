@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom
 import Navbar from './Components/Navbar'
 import { Fragment } from 'react';
 import DLSwitch from './Components/DarkLightToggle';
-
+import HomeScreen from './Screens/HomeScreen';
 function App() {
 	const lightTheme = createTheme({
 	  type: 'light',
@@ -88,6 +88,9 @@ function App() {
 						<DLSwitch></DLSwitch>
 					</div>
 				}>
+					<Route path='/website_frontend/dashboard/' element={<HomeScreen></HomeScreen>
+					
+				}></Route>
 
 				</Route>
 			  </Routes>

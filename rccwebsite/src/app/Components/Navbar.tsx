@@ -1,15 +1,18 @@
 import { Dropdown, Navbar as Nav, Text, Avatar, Input,  } from '@nextui-org/react'
 import NavbarBrand from '@nextui-org/react/types/navbar/navbar-brand'
 import NavbarItem from '@nextui-org/react/types/navbar/navbar-item'
+import { useLocation } from 'react-router-dom'
 //! Nav is from the component, such that the component can be imported as "Navbar"
 function Navbar() {
     //TODO change if nav should be compact for certain size (isCompact attribute can be set directly into nav, so use a media query)
     //TODO make it so that if view is XS (where components are hidden) it will show the hamburger menu
 //TODO, if logged in show avatar, otherwise login button/screen
+//TODO also potentially consider adding a dropdown menu for each option (although it's pain to do)
     
+const location = useLocation()
 
 
-return <Nav isBordered variant="sticky"  >
+return <Nav isBordered variant="floating">
         <Nav.Brand css={{ mr: "$4" }}>
           {/* <AcmeLogo /> */}
       
@@ -18,11 +21,11 @@ return <Nav isBordered variant="sticky"  >
           </Text>
           
           <Nav.Content  variant="highlight" hideIn={'xs' || 'sm'}>
-            <Nav.Link isActive href="#" >
+            <Nav.Link  isActive={location.pathname.toString() === '/website_frontend/dashboard'} href="/dashboard" >
               Dashboard
             </Nav.Link>
-            <Nav.Link href="#" >Who We Are</Nav.Link>
-            <Nav.Link href="#">Portfolio</Nav.Link>
+            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/about-us'} href="#" >Who We Are</Nav.Link>
+            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/portfolio'} href="#">Portfolio</Nav.Link>
            
           </Nav.Content>
         </Nav.Brand>
