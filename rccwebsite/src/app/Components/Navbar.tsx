@@ -21,11 +21,11 @@ return <Nav isBordered variant="floating">
           </Text>
           
           <Nav.Content  variant="highlight" hideIn={'xs' || 'sm'}>
-            <Nav.Link  isActive={location.pathname.toString() === '/website_frontend/dashboard'} href="/dashboard" >
+            <Nav.Link  isActive={location.pathname.toString() === '/website_frontend/dashboard'} href="/website_frontend/dashboard" >
               Dashboard
             </Nav.Link>
-            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/about-us'} href="#" >Who We Are</Nav.Link>
-            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/portfolio'} href="#">Portfolio</Nav.Link>
+            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/about-us'} href="/website_frontend/about-us" >Who We Are</Nav.Link>
+            <Nav.Link isActive={location.pathname.toString() === '/website_frontend/portfolio'} href="/website_frontend/portfolio">Portfolio</Nav.Link>
            
           </Nav.Content>
         </Nav.Brand>
