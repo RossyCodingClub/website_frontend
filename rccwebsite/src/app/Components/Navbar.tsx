@@ -12,7 +12,7 @@ function Navbar() {
 const location = useLocation()
 
 
-return <Nav isBordered variant="floating">
+return <Nav isBordered>
         <Nav.Brand css={{ mr: "$4" }}>
           {/* <AcmeLogo /> */}
       

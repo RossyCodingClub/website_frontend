@@ -15,6 +15,8 @@ import HomeScreen from './Screens/HomeScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import PortfolioScreen from './Screens/PortfolioScreen';
 function App() {
+
+//container grid
 	const lightTheme = createTheme({
 		type: 'light',
 		theme: {
