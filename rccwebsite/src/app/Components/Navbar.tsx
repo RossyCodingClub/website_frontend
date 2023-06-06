@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom'
 //! Nav is from the component, such that the component can be imported as "Navbar"
 function Navbar() {
     //TODO change if nav should be compact for certain size (isCompact attribute can be set directly into nav, so use a media query)
-    //TODO make it so that if view is XS (where components are hidden) it will show the hamburger menu
 //TODO, if logged in show avatar, otherwise login button/screen
 //TODO also potentially consider adding a dropdown menu for each option (although it's pain to do)
     
@@ -14,7 +13,7 @@ const location = useLocation()
 
 return <Nav isBordered>
         <Nav.Brand css={{ mr: "$4" }}>
-          {/* <AcmeLogo /> */}
+          {/* //! LOGO (SVG please) should be here*/}
       
           <Text b color="inherit" css={{ mr: "$11" }}>
             Somelogo
@@ -49,9 +48,7 @@ return <Nav isBordered>
           >
             <Input
               clearable
-            //   contentLeft={
-            //     // <SearchIcon fill="var(--nextui-colors-accents6)" size={16} />
-            //   }
+          
               contentLeftStyling={false}
               css={{
                 w: "100%",
