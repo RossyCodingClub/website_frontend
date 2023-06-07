@@ -4,7 +4,7 @@ import {Grid, Card, Text, Collapse, Image, Col}  from '@nextui-org/react'
 
 
 
-function HomeScreen() {
+function DashboardScreen() {
     //TODO 3 potential cards on what we do image gallery drop down etc
 
     //TODO headline (in nice text) + IMAGE background instead
@@ -199,4 +199,4 @@ function HomeScreen() {
     )
 }
 
-export default HomeScreen
+export default DashboardScreen

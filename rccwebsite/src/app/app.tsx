@@ -10,9 +10,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import { Fragment } from 'react';
 import DLSwitch from './Components/DarkLightToggle';
-import HomeScreen from './Screens/HomeScreen';
+import HomeScreen from './Screens/DashboardScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import PortfolioScreen from './Screens/PortfolioScreen';
+import DashboardScreen from './Screens/DashboardScreen';
 function App() {
 
 //container grid
@@ -98,7 +99,7 @@ function App() {
 						</Route>
 							<Route
 								path="/website_frontend/dashboard/"
-								element={<HomeScreen></HomeScreen>}
+								element={<DashboardScreen></DashboardScreen>}
 							></Route>
 							<Route
 								path="/website_frontend/about-us/"
