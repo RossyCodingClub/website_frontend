@@ -14,6 +14,7 @@ import HomeScreen from './Screens/DashboardScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import PortfolioScreen from './Screens/PortfolioScreen';
 import DashboardScreen from './Screens/DashboardScreen';
+import LandingScreen from './Screens/LandingScreen';
 function App() {
 
 //container grid
@@ -88,12 +89,7 @@ function App() {
 						<Route
 							path="/website_frontend/"
 							element={
-								<div>
-									<Navbar></Navbar>
-									<h1>Cringe</h1>
-
-									<DLSwitch></DLSwitch>
-								</div>
+								<LandingScreen></LandingScreen>
 							}
 						>
 						</Route>
